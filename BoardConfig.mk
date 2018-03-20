@@ -1,4 +1,4 @@
-# Copyright (C) 2013 The CyanogenMod Project
+# Copyright (C) 2018 The Lineage Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -15,9 +15,6 @@
 LOCAL_PATH := device/acer/s56
 
 USE_CAMERA_STUB := true
-
-# inherit from the proprietary version
--include vendor/acer/s56/BoardConfigVendor.mk
 
 TARGET_NO_BOOTLOADER := true
 TARGET_BOOTLOADER_BOARD_NAME := S56
@@ -71,37 +68,20 @@ TARGET_USERIMAGES_SPARSE_EXT_DISABLED := false
 BOARD_HAS_LARGE_FILESYSTEM := true
 
 # Recovery
-#RECOVERY_VARIANT := cwm
-#RECOVERY_VARIANT := carliv
-#RECOVERY_VARIANT := philz
-#RECOVERY_VARIANT := cm
+RECOVERY_VARIANT := twrp
 TARGET_PREBUILT_KERNEL := $(LOCAL_PATH)/prebuilt/kernel
 TARGET_RECOVERY_INITRC := $(LOCAL_PATH)/recovery/recovery.cwm.rc
 TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/recovery/recovery.fstab
 
 BOARD_CUSTOM_BOOTIMG_MK := $(LOCAL_PATH)/mkmtkbootimg.mk
 
-BOARD_USE_CUSTOM_RECOVERY_FONT := \"font_17x33.h\"
-DEVICE_RESOLUTION := 720x1280
 DEVICE_SCREEN_WIDTH := 720
 DEVICE_SCREEN_HEIGHT := 1280
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/virtual/android_usb/android0/f_mass_storage/lun%d/file
 TARGET_RECOVERY_LCD_BACKLIGHT_PATH := \"/sys/class/leds/lcd-backlight/brightness\"
 BRIGHTNESS_SYS_FILE := "/sys/class/leds/lcd-backlight/brightness"
 
-# EGL settings
-BOARD_EGL_CFG := $(LOCAL_PATH)/egl.cfg
-USE_OPENGL_RENDERER := true
-TARGET_RECOVERY_PIXEL_FORMAT := "RGBA_8888"
-BOARD_USE_FRAMEBUFFER_ALPHA_CHANNEL := true
-TARGET_DISABLE_TRIPLE_BUFFERING := false
-BOARD_CUSTOM_GRAPHICS := ../../../device/acer/s56/recovery/graphics.cwm.c
-
 #TWRP
-#RECOVERY_VARIANT := twrp
-#TARGET_RECOVERY_INITRC := $(LOCAL_PATH)/recovery/recovery.twrp.rc
-#TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/recovery/recovery.twrp.fstab
-TW_BOARD_CUSTOM_GRAPHICS := ../../../device/acer/s56/recovery/graphics.twrp.c
 TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
 TW_CUSTOM_BATTERY_PATH := /sys/devices/platform/battery/power_supply/battery
 TW_CUSTOM_CPU_TEMP_PATH := /sys/devices/virtual/thermal/thermal_zone1/temp

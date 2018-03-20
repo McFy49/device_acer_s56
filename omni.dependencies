@@ -1,0 +1,7 @@
+[
+	{
+		"remote":"android.googlesource.com",
+		"repository":"device/generic/goldfish",
+		"target_path":"/device/generic/goldfish",
+	}
+]

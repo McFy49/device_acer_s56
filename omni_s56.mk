@@ -1,4 +1,4 @@
-# Copyright (C) 2013 The CyanogenMod Project
+# Copyright (C) 2018 The Lineage Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -15,8 +15,8 @@
 # Release name
 PRODUCT_RELEASE_NAME := s56
 
-# Inherit some common CM stuff.
-$(call inherit-product, vendor/cm/config/common_full_phone.mk)
+# Inherit some common omni stuff.
+$(call inherit-product, vendor/omni/config/common.mk)
 
 # Inherit device configuration
 $(call inherit-product, device/acer/s56/device_s56.mk)
@@ -26,7 +26,7 @@ TARGET_SCREEN_WIDTH := 720
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := s56
-PRODUCT_NAME := cm_s56
+PRODUCT_NAME := omni_s56
 PRODUCT_BRAND := Acer
 PRODUCT_MODEL := S56
 PRODUCT_MANUFACTURER := Acer
